@@ -1,0 +1,6 @@
+# configuration files
+**/configuration.json
+
+# build output
+**/bin
+**/obj
