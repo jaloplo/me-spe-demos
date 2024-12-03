@@ -1,0 +1,10 @@
+{
+    "entraId": {
+        "tenantId": "",
+        "clientId": "",
+        "clientSecret": ""
+    },
+    "sharepoint-embedded": {
+        "containerTypeId": ""
+    }
+}
