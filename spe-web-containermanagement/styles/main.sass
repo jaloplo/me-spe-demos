@@ -1,0 +1,237 @@
+@use 'sass:color'
+    
+a, b, body, button, div, fieldset, form, h1, h2, h3, h4, h5, h6, header, html, input, label, li, main, nav, p, section, span, small, strong, ul
+    background: transparent
+    box-sizing: border-box
+    display: block
+    margin: 0
+    padding: 0
+    border: 0
+    font-size: 100%
+    font: inherit
+    line-height: 150%
+    vertical-align: baseline
+
+$color-accent: #66cd7a
+$color-primary: #000
+
+$font-family-figma-hand: "Figma Hand", sans-serif
+$font-family-league-spartan: "League Spartan", sans-serif
+
+.highlight
+    color: $color-accent
+
+@mixin typo-h1
+    font-family: $font-family-league-spartan
+    font-size: 40pt
+    font-weight: bold
+    text-transform: capitalize
+
+@mixin typo-h1-subtitle
+    font-family: $font-family-league-spartan
+    font-size: 20px
+    font-weight: 100
+    text-transform: uppercase
+
+@mixin typo-h2
+    font-family: $font-family-league-spartan
+    font-size: 32px
+    font-weight: bold
+
+@mixin typo-h3
+    font-family: $font-family-league-spartan
+    font-size: 24px
+    font-weight: bold
+
+@mixin typo-text-regular
+    font-family: $font-family-league-spartan
+    font-size: 24px
+    font-weight: 100
+
+@mixin typo-text-small
+    font-family: $font-family-league-spartan
+    font-size: 16px
+    font-weight: 100
+
+@mixin queue-centered
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: flex-start
+    width: 100%
+
+@mixin queue-left
+    display: flex
+    flex-direction: row
+    justify-content: left
+    align-items: flex-start
+    width: 100%
+
+@mixin stack-centered
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+
+@mixin stack-left
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    width: 100%
+
+a, b, button, h1, h2, h3, h4, h5, h6, label, p, span, strong
+    @include typo-text-regular
+
+small
+    @include typo-text-small
+
+button
+    font-family: $font-family-league-spartan
+    font-size: 24px
+    font-weight: bold
+    text-transform: uppercase
+
+button[type="reset"]
+    color: black
+    border: solid 1px black
+    background-color: white
+    padding: 5px 40px
+
+button[type="submit"]
+    border-color: $color-accent
+    color: white
+    background-color: $color-accent
+    padding: 5px 40px
+
+input[type="text"]
+    font-family: $font-family-league-spartan
+    font-size: 24px
+    font-weight: 100
+    border: solid 1px black
+    color: black
+    background-color: white
+    padding: 5px 20px
+    width: 100%
+
+label
+    font-family: $font-family-league-spartan
+    font-size: 24px
+    font-weight: bold
+    color: black
+    padding: 0
+    width: 100%
+
+
+body
+    @include stack-centered
+    min-height: 100vh
+    width: 100vw
+
+    > footer
+        @include stack-centered
+        background-color: #EFEFEF
+        padding: 40px 0
+
+        > div
+            @include queue-centered
+            gap: 20px
+            width: auto
+
+            > section
+                @include stack-left
+                gap: 10px
+
+                > small
+                    font-family: $font-family-league-spartan
+                    font-size: 12px
+                    font-weight: 100
+                    text-transform: uppercase
+
+                > span
+                    font-family: $font-family-figma-hand
+                    font-size: 16px
+                    font-weight: normal
+    
+    > header
+        @include stack-left
+        gap: 20px
+        padding: 20px 200px 0 200px
+
+        > div
+            @include queue-left
+            gap: 20px
+
+            > section
+                @include stack-left
+                gap: 10px
+
+                > h1
+                    @include typo-h1
+                
+                > small
+                    @include typo-h1-subtitle
+
+    
+    > main
+        @include stack-centered
+        gap: 40px
+        padding: 80px 200px
+
+        > header
+            @include queue-centered
+            gap: 40px
+            width: 100%
+
+            > h2
+                @include typo-h2
+                width: 100%
+
+        > ul
+            @include stack-left
+            gap: 40px
+
+            > li
+                @include queue-left
+                gap: 20px
+
+                > article
+                    @include stack-left
+                    gap: 10px
+
+                    > header
+                        @include queue-left
+                        gap: 10px
+                        width: 100%
+                        
+                        > h3
+                            @include typo-h3
+                            width: 100%
+                    
+                    > ul
+                        @include queue-left
+                        gap: 20px
+
+                        small
+                            background-color: color.adjust($color-accent, $alpha: -0.8)
+                            padding: 0 20px
+        
+        > form
+            @include stack-left
+            gap: 80px
+
+            > fieldset
+                @include stack-left
+                gap: 40px
+
+                > div
+                    @include stack-left
+                    gap: 10px
+
+            > ul
+                @include queue-centered
+                gap: 80px
+                
+
+            

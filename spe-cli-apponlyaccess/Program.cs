@@ -32,7 +32,6 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("
 var response = await httpClient.GetAsync($"https://graph.microsoft.com/v1.0/storage/fileStorage/containers?$filter=containerTypeId eq {speSection.ContainerTypeId}");
 var content = await response.Content.ReadAsStringAsync();
 
-
 var containerResponse = JsonSerializer.Deserialize<ContainerResponseModel>(content);
 foreach (var container in containerResponse.Containers) {
     Console.WriteLine($"Container: {container.Id} - {container.DisplayName}");
